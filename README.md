@@ -1,6 +1,7 @@
 **FIR-Filter-FPGA-Implementation**
 
-* Overview
+* Overview  
+
 This project implements a 4-tap FIR filter on the Intel DE1-SoC FPGA using Verilog HDL. The design features a modular architecture with ARM Hard Processor System (HPS) integration for comprehensive testing and real-time signal processing capabilities.
 
 *Key Features
@@ -70,16 +71,18 @@ The FIR design is verified through:
 ● Simulation: Testbenches are used to validate the FIR module against predefined input 
 signals and expected outputs in simulation tools like ModelSim.   
 ● On-Board Testing: The design is uploaded to the DE1 board, where the ARM-HPS 
-provides test data and reads the results for validation
+provides test data and reads the results for validation  
 
-* Output
+* Output  
 ![image](https://github.com/user-attachments/assets/25d35126-de51-4d84-93be-289169e64ebe)
 
-The output was more legible in the terminal and the error was easily noticeable.
+The output was more legible in the terminal and the error was easily noticeable.  
+
 ![image](https://github.com/user-attachments/assets/0affe4c3-59e1-4f56-ac2a-149a1d77a2cd)  
 
 
-* Results 
+* Results
+
 ![image](https://github.com/user-attachments/assets/4de73d50-d86a-433c-a21b-ec0c4a98abc5)
 
 The FIR filter design efficiently utilizes FPGA resources, employing 1092 Adaptive Logic Modules (ALMs) and 1860 Adaptive Look-Up Tables (ALUTs) for implementing logic functions, with a balanced distribution across 3-to-7 input functions. The design leverages 1268 dedicated registers for sequential logic and data storage while requiring 276 I/O pins for communication with external systems such as the ARM-HPS and peripherals. It uses 32,768 block memory bits for buffering and intermediate computations, demonstrating efficient memory management. Notably, the design avoids using DSP blocks, instead relying on combinational logic for arithmetic operations, which optimizes resource usage. A single Phase-Locked Loop (PLL) ensures stable and precise clock generation, critical for real-time signal processing. With a maximum fan-out of 1254 and an average fan-out of 3.24, the design achieves effective signal distribution, minimizing delays. This resource-efficient implementation leaves room for future scalability, making it well-suited for the intended FPGA-based FIR filter application.
